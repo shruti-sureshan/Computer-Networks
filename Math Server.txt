@@ -1,0 +1,98 @@
+SERVER
+
+import java.io.*;
+import java.net.*;
+import java.lang.Math;
+public class Server1
+{
+public static void main(String args[]) throws Exception
+{
+ServerSocket ss=new ServerSocket(6666);
+Socket s=ss.accept();
+DataInputStream a=new DataInputStream(s.getInputStream());
+DataOutputStream b=new DataOutputStream(s.getOutputStream()); 
+BufferedReader c=new BufferedReader(new InputStreamReader(System.in));
+int func;
+double num1;
+double num2;
+double answer=0;     
+int i;
+for(i=1;i<=3;i++)
+{
+System.out.println("waiting for clients reply");
+func=a.readInt();
+num1=a.readDouble();
+num2=a.readDouble();
+System.out.println("client's message is");
+System.out.println("function is"+func);
+System.out.println("1st number is"+num1);
+System.out.println("2nd number is"+num2);
+      switch (func)
+        {
+           case 1:  answer = num1 + num2;
+              break;
+          case 2:  answer = num1 - num2;
+              break;
+          case 3:  answer = num1 * num2;
+               break;
+          case 4:  answer = Math.pow(num1, num2);
+               break;
+          case 5:  answer = num1 / num2;
+               break;
+          case 6: answer = num1 % num2;
+               break;
+              }
+b.writeDouble(answer);
+b.flush();
+System.out.println("\n");
+}
+b.close();
+a.close();
+s.close();
+ss.close();
+} }
+
+
+
+CLIENT
+
+
+import java.io.*;
+import java.net.*;
+import java.lang.Math;
+public class Client1
+{
+public static void main(String args[]) throws Exception
+{
+Socket s=new Socket("localhost",6666);
+DataInputStream a=new DataInputStream(s.getInputStream());
+DataOutputStream b=new DataOutputStream(s.getOutputStream()); 
+BufferedReader c=new BufferedReader(new InputStreamReader(System.in));
+int func;
+double answer;
+int i;
+for(i=1;i<=3;i++)
+{
+System.out.println("Please enter your function");
+func= Integer.parseInt(c.readLine());
+b.writeInt(func);
+b.flush();
+System.out.println("Please enter your numbers");     
+double num1 =  Integer.parseInt(c.readLine());
+b.writeDouble(num1);
+b.flush();
+double num2 =  Integer.parseInt(c.readLine());
+b.writeDouble(num2);
+b.flush();
+System.out.println("waiting for servers reply");
+answer=a.readDouble();
+System.out.println("answer is" +answer);
+System.out.println("\n");
+}
+b.close();
+a.close();
+s.close();        
+} }
+
+
+
