@@ -8,3 +8,5 @@
 •	DHCP<br/>
 •	Static routing<br/>
 •	Networking devices working<br/>
+
+Technologies used: JAVA 8, Eclipse IDE, Cisco Packet Tracer
