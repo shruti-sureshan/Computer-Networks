@@ -1,6 +1,5 @@
 # Computer-Networks
-List of Experiments:<br>
-
+**List of Experiments:**<br>
 •	Cyclic Redundancy check (CRC)<br/>
 •	Client Server<br/>
 •	IP addressing<br/>
