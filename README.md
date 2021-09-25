@@ -1,4 +1,7 @@
 # Computer-Networks
+
+This repository contains Computer Networks Lab Practicals which I have performed.
+
 **List of Experiments:**<br>
 •	Introduction to Packet Tracer & Simulate the working of Hub, Switch AND Router<br/>
 •	Connecting two networks using one router (DHCP)<br/>
