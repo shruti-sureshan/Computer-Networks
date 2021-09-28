@@ -16,4 +16,4 @@ This repository contains Computer Networks Lab Practicals which I have performed
 • Write a program to implement the change case of a word/sentence using client server through socket programming(uppercase-lowercase)<br/>
 
 
-Technologies used: JAVA 8, Eclipse IDE, Cisco Packet Tracer
+Technologies used: JAVA 8, Eclipse IDE, Cisco Packet Tracer, Wireshark
